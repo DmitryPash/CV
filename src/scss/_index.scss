@@ -52,10 +52,17 @@
     width: 100%;
     background-color: khaki;
     background-position: center;
-
+   
     &-theme {
       background-color: #2f3640;
       color: #fff;
+    }
+    &-darkness {
+      background-color: #000;
+      background-image: url(https://i.gifer.com/2Bap.gif);
+      // background-repeat: no-repeat;
+      // background-position: center;
+      // background-size: contain;
     }
     &-wrapper {
         height: 100vh;
@@ -69,6 +76,7 @@
         color: #2f3640;
         font-weight: 700;
         font-size: rem(80);
+        
          @media(max-width:475px) {
                 font-size: rem(40);
           }

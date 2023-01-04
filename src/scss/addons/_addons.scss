@@ -2,6 +2,16 @@
     overflow: hidden;
 }
 
+.body-end {
+    height: initial;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #fff;
+    background-image: url(https://media2.giphy.com/media/hFmIU5GQF18Aw/giphy.gif?cid=ecf05e474gxqqtwcsjx4qi05urnpogkl9z3lanw8a7ex29gh&rid=giphy.gif&ct=g);
+}
+
+
 .open {
     display: block;
 }

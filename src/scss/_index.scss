@@ -64,6 +64,9 @@
       // background-position: center;
       // background-size: contain;
     }
+    &-error {
+        background-color: red;
+      }
     &-wrapper {
         height: 100vh;
         display: flex;
@@ -150,3 +153,6 @@
     -moz-border-radius: 5px;
     border-radius: 5px;
   }
+
+@import './components/part2';
+@import './components/part3';

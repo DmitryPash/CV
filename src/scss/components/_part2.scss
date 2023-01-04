@@ -1,0 +1,106 @@
+//* Part 2
+.body-z {
+  background-color: black;
+  //  background-image: url(./../images/bg/bgpart2.jpg);
+  color: #fff;
+  font-size: calc(var(--index) * 0.8);
+  line-height: 1.75;
+  font-weight: 400;
+  height: var(--depth);
+
+}
+
+.container-z {
+  display: none;
+
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  perspective: 1500px;
+}
+
+.gallery {
+  transform-style: preserve-3d;
+  height: 100%;
+}
+.frame {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition), opacity 0.5s ease;
+  will-change: transform;
+  transform-style: preserve-3d;
+  color: #fff;
+  /* transform: translateX(-50%); */
+  /* left: 50%; */
+}
+.iframe-wrapper {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 800px;
+}
+
+.frame-content {
+ 
+  h2 {
+    font-family: "Raleway", sans-serif;
+    text-align: center;
+    font-size: calc(var(--index) * 3.3);
+    color: #fff;
+  }
+}
+.frame-text-right > *{
+  position: relative;
+  color: #fff;
+  left: 18vw;
+  max-width: 30vw;
+  text-align: left !important;
+}
+.frame-text-left > *{
+  position: relative;
+  color: #fff;
+  right: 18vw;
+  max-width: 30vw;
+  text-align: right !important;
+}
+
+.frame-media {
+  position: relative;
+  width: calc(var(--index) * var(--side-small));
+  height: calc(var(--index) * var(--side-big));
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  &-left {
+    right: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
+  }
+  &-right {
+    left: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
+  }
+}
+
+.frame-bg {
+    background-color: rgba(0, 0, 0, 0.861);
+}
+/* .iframe-img, .iframe-text {
+    flex: 0 0 50%;
+    max-width: 50%;
+  } */
+
+// .iframe-img img {
+//   position: relative;
+//   width: calc(var(--index) * var(--side-small));
+//   height: calc(var(--index) * var(--side-big));
+//   background-position: center;
+//   background-size: cover;
+// }
+
+// .iframe-left {
+//   position: relative;
+//   right: calc(var(--side-small) * var(--index));
+// }

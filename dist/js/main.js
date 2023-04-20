@@ -3489,50 +3489,50 @@ inputPassword.addEventListener("keyup", () => {
 });
 
 //part 3
-let lab = D.querySelector(".laberint");
-let labOpen = D.querySelector(".laberintisopen");
+// let lab = D.querySelector(".laberint");
+// let labOpen = D.querySelector(".laberintisopen");
 
-let switces = lab.querySelectorAll(".switch");
+// let switces = lab.querySelectorAll(".switch");
 
-switces.forEach((switchElem, index) => {
-  switchElem.addEventListener("click", (switchClick) => {
-    if (index - 1 < 0) {
-      switchElem.classList.toggle("up");
-      switces[index + 1].classList.toggle("up");
-      switces[3].classList.toggle("up");
-    } else if (index == 2) {
-      switchElem.classList.toggle("up");
-      switces[index - 1].classList.toggle("up");
-      switces[index + 2].classList.toggle("up");
-    } else if (index == 3) {
-      switchElem.classList.toggle("up");
-      switces[0].classList.toggle("up");
-      switces[5].classList.toggle("up");
-    } else if (index == 4) {
-      switchElem.classList.toggle("up");
-      switces[2].classList.toggle("up");
-      switces[7].classList.toggle("up");
-    } else if (index == 5) {
-      switchElem.classList.toggle("up");
-      switces[index - 2].classList.toggle("up");
-      switces[index + 1].classList.toggle("up");
-    } else if (index == 7) {
-      switchElem.classList.toggle("up");
-      switces[4].classList.toggle("up");
-      switces[index - 1].classList.toggle("up");
-    } else {
-      switchElem.classList.toggle("up");
-      switces[index + 1].classList.toggle("up");
-      switces[index - 1].classList.toggle("up");
-    }
+// switces.forEach((switchElem, index) => {
+//   switchElem.addEventListener("click", (switchClick) => {
+//     if (index - 1 < 0) {
+//       switchElem.classList.toggle("up");
+//       switces[index + 1].classList.toggle("up");
+//       switces[3].classList.toggle("up");
+//     } else if (index == 2) {
+//       switchElem.classList.toggle("up");
+//       switces[index - 1].classList.toggle("up");
+//       switces[index + 2].classList.toggle("up");
+//     } else if (index == 3) {
+//       switchElem.classList.toggle("up");
+//       switces[0].classList.toggle("up");
+//       switces[5].classList.toggle("up");
+//     } else if (index == 4) {
+//       switchElem.classList.toggle("up");
+//       switces[2].classList.toggle("up");
+//       switces[7].classList.toggle("up");
+//     } else if (index == 5) {
+//       switchElem.classList.toggle("up");
+//       switces[index - 2].classList.toggle("up");
+//       switces[index + 1].classList.toggle("up");
+//     } else if (index == 7) {
+//       switchElem.classList.toggle("up");
+//       switces[4].classList.toggle("up");
+//       switces[index - 1].classList.toggle("up");
+//     } else {
+//       switchElem.classList.toggle("up");
+//       switces[index + 1].classList.toggle("up");
+//       switces[index - 1].classList.toggle("up");
+//     }
 
-    let up8 = lab.querySelectorAll(".up");
-    if (up8.length == 8) {
-      console.log("open");
-      labOpen.innerHTML = "open";
-    }
-  });
-});
+//     let up8 = lab.querySelectorAll(".up");
+//     if (up8.length == 8) {
+//       console.log("open");
+//       labOpen.innerHTML = "open";
+//     }
+//   });
+// });
 
 
 // // import { Scene } from 'three';

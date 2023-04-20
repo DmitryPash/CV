@@ -8,20 +8,17 @@ let main = D.querySelector(".main");
 let bluescreen = D.querySelector(".bluescreen");
 let errorTitle = D.querySelector(".main-title");
 let btnNext = D.querySelector(".main-link");
-let embed = D.querySelector('audio')
-let sound2 = D.querySelector('.sounditem2')
-let psw = D.querySelector('.password');
-let stopper = D.querySelector('.stopper');
-let gallery = D.querySelector('.gallery');
-let thirdpart = D.querySelector('.thirdpart')
-
+let embed = D.querySelector("audio");
+let sound2 = D.querySelector(".sounditem2");
+let psw = D.querySelector(".password");
+let stopper = D.querySelector(".stopper");
+let gallery = D.querySelector(".gallery");
+let thirdpart = D.querySelector(".thirdpart");
 
 //? Text change
 
-let textChange1 = D.querySelector('.frame-text-change1'),
-textChange2 = D.querySelector('.frame-text-change2');
-
-
+let textChange1 = D.querySelector(".frame-text-change1"),
+  textChange2 = D.querySelector(".frame-text-change2");
 
 //Create random math
 function getRandomIntInclusive(min, max) {
@@ -33,16 +30,12 @@ function getRandomIntInclusive(min, max) {
 // Create random password
 let passwordArr = [];
 
-for(let i = 0; i <= 3; i++) {
-  let num = getRandomIntInclusive(1,9)
+for (let i = 0; i <= 3; i++) {
+  let num = getRandomIntInclusive(1, 9);
   passwordArr.push(num);
 }
-let password = passwordArr.join('')
-psw.innerHTML = password
-
-
-
-
+let password = passwordArr.join("");
+psw.innerHTML = password;
 
 //Scroll off
 body.classList.add("body-hidden");
@@ -70,10 +63,10 @@ let errorContainer = D.querySelector(".error-container");
 
 mainbtn.addEventListener("click", () => {
   //Delete btn from scerme
-// embed.play()
+  // embed.play()
 
   mainbtn.classList.add("main-button-transition");
-  main.classList.add('main-error')
+  main.classList.add("main-error");
   // Error screen
   for (let i = 0; i < 1; i++) {
     let error = D.querySelectorAll(".error");
@@ -106,7 +99,7 @@ mainbtn.addEventListener("click", () => {
   setTimeout(() => {
     // sound2.pause()
     bluescreen.classList.remove("open");
-    main.classList.remove('main-error')
+    main.classList.remove("main-error");
     main.classList.add("main-theme");
     // errorTitle glitch layers
     errorTitle.style.color = "#fff";
@@ -171,97 +164,73 @@ window.onscroll = function () {
 
     opacity = zVals[i] < Math.abs(zSpacing) / 1.5 ? 1 : 0;
     frame.setAttribute("style", `transform:${transform}; opacity: ${opacity}`);
-
-   
-
   });
-  
-//   if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
-//     console.log('end')
-//     // stopper.style.transform = 
-    
-//  }
- 
+
+  //   if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
+  //     console.log('end')
+  //     // stopper.style.transform =
+
+  //  }
 };
 
 // console.log(stopper)
-gallery.addEventListener('click', () => {
-  inputPassword.focus()
-})
+gallery.addEventListener("click", () => {
+  inputPassword.focus();
+});
 
-let inputPassword = D.querySelector('.input-password')
+let inputPassword = D.querySelector(".input-password");
 
-inputPassword.addEventListener('keyup', () => {
-  console.log(password)
-  if(inputPassword.value == password) {
+inputPassword.addEventListener("keyup", () => {
+  console.log(password);
+  if (inputPassword.value == password) {
     document.querySelector(".container-z").classList.remove("open");
-    body.classList.remove('body-z')
-    thirdpart.classList.add('open')
+    body.classList.remove("body-z");
+    thirdpart.classList.add("open");
   }
-})
+});
 
+//part 3
+let lab = D.querySelector(".laberint");
+let labOpen = D.querySelector(".laberintisopen");
 
+let switces = lab.querySelectorAll(".switch");
 
-//Part 3
-let red = 3;
-let green = 8;
-let blue = 1;
+switces.forEach((switchElem, index) => {
+  switchElem.addEventListener("click", (switchClick) => {
+    if (index - 1 < 0) {
+      switchElem.classList.toggle("up");
+      switces[index + 1].classList.toggle("up");
+      switces[3].classList.toggle("up");
+    } else if (index == 2) {
+      switchElem.classList.toggle("up");
+      switces[index - 1].classList.toggle("up");
+      switces[index + 2].classList.toggle("up");
+    } else if (index == 3) {
+      switchElem.classList.toggle("up");
+      switces[0].classList.toggle("up");
+      switces[5].classList.toggle("up");
+    } else if (index == 4) {
+      switchElem.classList.toggle("up");
+      switces[2].classList.toggle("up");
+      switces[7].classList.toggle("up");
+    } else if (index == 5) {
+      switchElem.classList.toggle("up");
+      switces[index - 2].classList.toggle("up");
+      switces[index + 1].classList.toggle("up");
+    } else if (index == 7) {
+      switchElem.classList.toggle("up");
+      switces[4].classList.toggle("up");
+      switces[index - 1].classList.toggle("up");
+    } else {
+      switchElem.classList.toggle("up");
+      switces[index + 1].classList.toggle("up");
+      switces[index - 1].classList.toggle("up");
+    }
 
-function isEquile() {
-  if (red == green && red == blue) {
-    console.log('asd')
-  }
-}
-
-
-let timerRed = D.querySelector('.timer-red');
-let timerBlue = D.querySelector('.timer-blue');
-let timerGreen = D.querySelector('.timer-green');
-let timerReset = D.querySelector('.timer-reset');
-
-timerRed.innerHTML = red
-timerGreen.innerHTML = green
-timerBlue.innerHTML = blue
-
-timerRed.addEventListener('click', () => {
-  red = red - 1;
-  blue = blue + 1;
-  green = green + 1;
-  console.log(green)
-  timerRed.innerHTML = red
-  timerGreen.innerHTML = green
-  timerBlue.innerHTML = blue
-  isEquile()
-})
-timerGreen.addEventListener('click', () => {
-  red = red - 1;
-  blue = blue + 1;
-  green = green - 1;
-  timerRed.innerHTML = red
-  timerGreen.innerHTML = green
-  timerBlue.innerHTML = blue
-  isEquile()
-})
-timerBlue.addEventListener('click', () => {
-  red = red + 1;
-  blue = blue - 1;
-  green = green - 1;
-  timerRed.innerHTML = red
-  timerGreen.innerHTML = green
-  timerBlue.innerHTML = blue
-  isEquile()
-})
-
-timerReset.addEventListener('click', () => {
-  red = 5;
-  green = 3;
-  blue = 1
-  timerRed.innerHTML = red
-  timerGreen.innerHTML = green
-  timerBlue.innerHTML = blue
-})
-
-
-
-
-
+    let up8 = lab.querySelectorAll(".up");
+    if (up8.length == 8) {
+      console.log("open");
+      labOpen.innerHTML = "open";
+    }
+  });
+});
